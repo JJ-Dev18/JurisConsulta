@@ -1,10 +1,12 @@
 import React from 'react'
 import { View, ImageBackground, Text, ActivityIndicator, StyleSheet } from 'react-native';
+import { useTheme } from 'react-native-paper';
 
 const image = {
   uri: 'https://res.cloudinary.com/dbi95d6gs/image/upload/v1629936091/Logo/pngtree-national-lawyer-consultation-day-simple-mobile-phone-poster-image_196125-removebg-preview_pqltuv.png',
 };
 export const LoadingScreen = () => {
+  const {colors} =useTheme()
   return (
     <View
       style={{
@@ -21,7 +23,7 @@ export const LoadingScreen = () => {
         {' '}
         Jurisconsulta{' '}
       </Text>
-      <ActivityIndicator style={styles.spinner} size="large" color='#f4511e' />
+      <ActivityIndicator style={styles.spinner} size="large" color={colors.primary} />
 
       {/* </ImageBackground> */}
     </View>

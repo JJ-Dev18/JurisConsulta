@@ -15,7 +15,7 @@ export const RegisterScreen = ({route,navigation}:Props) => {
   const [loading, setloading] = useState(false);
   const {width, height} = useWindowDimensions();
   const params = route.params
-  console.log(navigation)
+  // console.log(navigation)
   useEffect(() => {
     setTimeout(() => {
       setloading(true);

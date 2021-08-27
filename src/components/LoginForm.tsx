@@ -9,11 +9,12 @@ import { SafeAreaInsetsContext } from 'react-native-safe-area-context';
 export const LoginForm = () => {
   const navigator = useNavigation()
   const [secure, setSecure] = React.useState(true);
+  const {colors } = useTheme()
   // console.log(navigator)
   // const { colors }= useTheme()
   return (
     <View style={styles.container}>
-      <Text style={styles.title}> Iniciar Sesion</Text>
+      <Text style={{...styles.title,color : colors.iconos}}> Iniciar Sesion</Text>
       <TextInput
         mode="outlined"
         label="Usuario"
@@ -68,7 +69,8 @@ const styles = StyleSheet.create({
     justifyContent : 'space-around'
   },
   title:{
-    fontSize : 30
+    fontSize : 30,
+    
   },
   input:{
     marginTop: 10,
