@@ -8,7 +8,7 @@ interface Props  {
   title: string;
   img?:string,
 }
-const Tipo = ({title}:Props) => { 
+const Tipo = ({title,img}:Props) => { 
   const  navigator  = useNavigation()
   return (
    
@@ -33,7 +33,7 @@ const Tipo = ({title}:Props) => {
       <Title style={{textAlign : 'center'}}>{title}</Title>
       
     </Card.Content>
-    <Card.Cover source={{uri: 'https://picsum.photos/700'}} />
+    <Card.Cover source={{uri: img}} />
    
   </Card>
 )};
@@ -42,6 +42,16 @@ export default Tipo;
 
 const styles = StyleSheet.create({
     card : {
-      width: '80%'
+      width: '80%',
+      elevation:50,
+      borderRadius: 20,
+      shadowOffset: {
+        width: 0,
+        height: 9,
+      },
+      shadowColor: '#fff',
+      shadowOpacity: 0.6,
+      shadowRadius: 3.86
+
     }
 });

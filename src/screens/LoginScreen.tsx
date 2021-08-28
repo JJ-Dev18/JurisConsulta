@@ -4,8 +4,8 @@ import {
   useWindowDimensions,
   NavigatorIOS,
 } from 'react-native';
-import {LoadingScreen} from '../components/LoadingScreen';
-import LoginForm from '../components/LoginForm';
+import {LoadingScreen} from '../components/login/LoadingScreen';
+import LoginForm from '../components/login/LoginForm';
 import {StackScreenProps} from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 

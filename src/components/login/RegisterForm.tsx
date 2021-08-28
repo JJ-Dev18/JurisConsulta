@@ -13,12 +13,12 @@ interface Props extends StackScreenProps<any, any> {
 export const RegisterForm = ({textButton,navigation}:Props) => {
   // const navigator = useNavigation();
   const [secure, setSecure] = React.useState(true);
-  
+  const { colors } = useTheme()
   // console.log(navigator)
   // const { colors }= useTheme()
   return (
     <View style={styles.container}>
-      <Text style={styles.title}> Registrarse</Text>
+      <Text style={{...styles.title,color: colors.primary}}> Registrarse</Text>
       <TextInput
         mode="outlined"
         label="Nombres"

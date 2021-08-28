@@ -5,74 +5,54 @@ import { SettingsScreen } from '../screens/SettingsScreen';
 import { AbogadosScreen } from '../screens/AbogadosScreen';
 import { Comprar } from '../screens/Comprar';
 import { useNavigation } from '@react-navigation/native';
+import {Button} from 'react-native'
 import Icon  from 'react-native-vector-icons/MaterialIcons';
-import { useTheme } from 'react-native-paper';
+import {  useTheme, Title } from 'react-native-paper';
+import TopTapAbogado from './TopTapAbogados';
+import DrawerNavigator from './DrawerNavigator';
+import BarraBusqueda from '../components/abogados/BarraBusqueda';
+import { DrawerScreenProps } from '@react-navigation/drawer';
+import { findNonSerializableValue } from '@reduxjs/toolkit';
+
 
 
 
 const Tab = createMaterialTopTabNavigator();
+interface Props extends DrawerScreenProps<any,any> {}
 
-function TopTapNavigator() {
-   const navigator = useNavigation();
+function TopTapNavigator({navigation}: Props) {
+  //  const navigator = useNavigation();
+  
    const { colors } = useTheme()
-   
-
-    
-   useEffect(() => {
-     navigator.setOptions({
-       headerShown: false,
-     });
-    
-   }, []);
+   console.log('este es el top navigator' , navigation)
+  useEffect(() => {
+    navigation.setOptions({
+      headerShown: true,
+      headerStyle: {height: 40},
+      headerLeft: undefined,
+      headerRight: () => (
+        <Icon name="notifications" size={20} onPress={() => navigation.toggleDrawer()} />
+      ),
+    });
+  });
 
   return (
     <Tab.Navigator
       style={{
-        shadowColor: 'transparent',
-        elevation: 0,
+        // shadowColor: 'transparent',
+        elevation: 6,
+        height: 20
       }}
       sceneContainerStyle={{
         backgroundColor: 'white',
       }}
-      // screenOptions={{
-      //   tabBarActiveTintColor: '#e91e63',
-      //   tabBarLabelStyle: {fontSize: 12},
-      //   tabBarStyle: {backgroundColor: 'powderblue'},
-      //   tabBarIconStyle: {borderColor: 'black'},
-      //   tabBarInactiveTintColor : 'black',
-      //   tabBarIndicatorStyle : { backgroundColor : 'brown'},
-      //   tabBarPressColor: 'red'
-
-      // }}
-      // screenOptions ={ ({route}) => {
-      //   tabBarIcon: ({color, focused}) => {
-      //     color = colors.primary;
-      //     focused = true;
-      //     let iconName: string = '';
-      //     switch (route.name) {
-      //       case 'Home':
-      //         iconName = 'home';
-      //         break;
-
-      //       case 'Abogados':
-      //         iconName = 'people-outline';
-      //         break;
-
-      //       case 'Comprar':
-      //         iconName = 'shopping-cart';
-      //         break;
-      //     }
-
-      //     return <Icon name={iconName} size={20} color={color} />;
-
-      // }}}
       screenOptions={({route}) => ({
-        tabBarActiveTintColor: colors.iconos,
-        tabBarLabelStyle: {fontSize: 12 ,fontWeight : 'bold'},
+        tabBarActiveTintColor: colors.background,
+        tabBarLabelStyle: {fontSize: 12, fontWeight: 'bold'},
         tabBarStyle: {backgroundColor: colors.primary},
         tabBarIconStyle: {borderColor: 'red'},
-        tabBarInactiveTintColor: colors.secondary,
-        tabBarIndicatorStyle: {backgroundColor: colors.iconos},
+        tabBarInactiveTintColor: colors.accent,
+        tabBarIndicatorStyle: {backgroundColor: colors.background},
         tabBarPressColor: 'red',
 
         tabBarIcon: ({color, focused}) => {
@@ -91,6 +71,9 @@ function TopTapNavigator() {
             case 'Comprar':
               iconName = 'shopping-cart';
               break;
+            case 'Drawer':
+              iconName = 'reorder';
+              break;
           }
 
           return <Icon name={iconName} size={20} color={color} />;
@@ -98,8 +81,9 @@ function TopTapNavigator() {
       })}>
       <Tab.Screen name="Inicio" component={HomeScreen} />
       {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}
-      <Tab.Screen name="Abogados" component={AbogadosScreen} />
+      <Tab.Screen name="Abogados" component={TopTapAbogado} />
       <Tab.Screen name="Comprar" component={Comprar} />
+      {/* <Tab.Screen name="Drawer" component={DrawerPrincipal} /> */}
     </Tab.Navigator>
   );
 }
@@ -107,21 +91,3 @@ function TopTapNavigator() {
 export default TopTapNavigator
 
 
-const options = ({color, focused,route}:any) => {
-  let iconName: string = '';
-  switch (route.name) {
-    case 'Chat':
-      iconName = 'chatbox-ellipses-outline';
-      break;
-
-    case 'Contacts':
-      iconName = 'people-outline';
-      break;
-
-    case 'Albums':
-      iconName = 'albums-outline';
-      break;
-  }
-
-  return <Icon name={iconName} size={20} color={color} />;
-};

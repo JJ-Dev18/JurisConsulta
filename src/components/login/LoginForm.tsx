@@ -14,7 +14,7 @@ export const LoginForm = () => {
   // const { colors }= useTheme()
   return (
     <View style={styles.container}>
-      <Text style={{...styles.title,color : colors.iconos}}> Iniciar Sesion</Text>
+      <Text style={{...styles.title,color : colors.primary}}> Iniciar Sesion</Text>
       <TextInput
         mode="outlined"
         label="Usuario"

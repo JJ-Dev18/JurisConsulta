@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, useWindowDimensions} from 'react-native';
-import {LoadingScreen} from '../components/LoadingScreen';
-import LoginForm from '../components/LoginForm';
 import {StackScreenProps} from '@react-navigation/stack';
-import RegisterForm from '../components/RegisterForm';
+import RegisterForm from '../components/login/RegisterForm';
 
 // interface Props {
 //   params :{
@@ -29,6 +27,7 @@ export const RegisterScreen = ({route,navigation}:Props) => {
           textButton="Registrarse"
           navigation={navigation}
           route={route}
+          
         />
       ) : (
         <RegisterForm
