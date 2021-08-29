@@ -31,7 +31,8 @@ export const Abogado = ({user}:Props) => {
 
 const styles = StyleSheet.create({
   content: {
-    marginTop: 10,
+    marginTop: 5,
+    marginBottom: 5 ,
     backgroundColor : 'white',
     padding: 20,
     flexDirection: 'row',

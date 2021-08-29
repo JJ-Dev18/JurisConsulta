@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import {CommonActions} from '@react-navigation/native';
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import { View, StyleSheet, Text, Image } from 'react-native';
 import {Button, TextInput, useTheme} from 'react-native-paper';
 import { StackScreenProps } from '@react-navigation/stack';
 
@@ -18,7 +18,13 @@ export const RegisterForm = ({textButton,navigation}:Props) => {
   // const { colors }= useTheme()
   return (
     <View style={styles.container}>
-      <Text style={{...styles.title,color: colors.primary}}> Registrarse</Text>
+      <Image
+        style={{width: 100, height: 100}}
+        source={{
+          uri: 'https://res.cloudinary.com/dbi95d6gs/image/upload/v1630265600/Logo/J-removebg-preview_1_bjax4y.png',
+        }}
+      />
+      <Text style={{...styles.title, color: colors.primary}}> Registrarse</Text>
       <TextInput
         mode="outlined"
         label="Nombres"
@@ -45,7 +51,13 @@ export const RegisterForm = ({textButton,navigation}:Props) => {
         label="Contrasena"
         placeholder="Minimo 6 caracteres"
         secureTextEntry={secure}
-        right={<TextInput.Icon name="eye" onPress={() => setSecure(!secure)} />}
+        right={
+          <TextInput.Icon
+            color={colors.primary}
+            name="eye"
+            onPress={() => setSecure(!secure)}
+          />
+        }
       />
 
       <Button

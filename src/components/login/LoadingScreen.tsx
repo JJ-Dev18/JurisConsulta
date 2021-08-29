@@ -1,9 +1,9 @@
 import React from 'react'
-import { View, ImageBackground, Text, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, ImageBackground, Text, ActivityIndicator, StyleSheet, Image } from 'react-native';
 import { useTheme } from 'react-native-paper';
 
 const image = {
-  uri: 'https://res.cloudinary.com/dbi95d6gs/image/upload/v1629936091/Logo/pngtree-national-lawyer-consultation-day-simple-mobile-phone-poster-image_196125-removebg-preview_pqltuv.png',
+  uri: 'https://res.cloudinary.com/dbi95d6gs/image/upload/v1630265600/Logo/J-removebg-preview_1_bjax4y.png',
 };
 export const LoadingScreen = () => {
   const {colors} =useTheme()
@@ -12,8 +12,15 @@ export const LoadingScreen = () => {
       style={{
         flex: 1,
         justifyContent: 'center',
+        alignItems : 'center'
       }}>
       {/* <ImageBackground source={image} resizeMode="cover" style={styles.image}> */}
+      <Image
+        style={{width: 70, height: 70}}
+        source={{
+          uri: 'https://res.cloudinary.com/dbi95d6gs/image/upload/v1630265600/Logo/J-removebg-preview_1_bjax4y.png',
+        }}
+      />
       <Text
         style={{
           fontSize: 45,
@@ -23,7 +30,11 @@ export const LoadingScreen = () => {
         {' '}
         Jurisconsulta{' '}
       </Text>
-      <ActivityIndicator style={styles.spinner} size="large" color={colors.primary} />
+      <ActivityIndicator
+        style={styles.spinner}
+        size="large"
+        color={colors.primary}
+      />
 
       {/* </ImageBackground> */}
     </View>

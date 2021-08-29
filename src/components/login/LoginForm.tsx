@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import {CommonActions} from '@react-navigation/native';
 import React from 'react'
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, Image } from 'react-native';
 import { Button, TextInput, useTheme } from 'react-native-paper';
 import { SafeAreaInsetsContext } from 'react-native-safe-area-context';
 
@@ -14,7 +14,16 @@ export const LoginForm = () => {
   // const { colors }= useTheme()
   return (
     <View style={styles.container}>
-      <Text style={{...styles.title,color : colors.primary}}> Iniciar Sesion</Text>
+      <Image
+        style={{width: 100, height: 100}}
+        source={{
+          uri: 'https://res.cloudinary.com/dbi95d6gs/image/upload/v1630265600/Logo/J-removebg-preview_1_bjax4y.png',
+        }}
+      />
+      <Text style={{...styles.title, color: colors.primary}}>
+        {' '}
+        Iniciar Sesion
+      </Text>
       <TextInput
         mode="outlined"
         label="Usuario"
@@ -24,10 +33,10 @@ export const LoginForm = () => {
       />
       <TextInput
         style={styles.input}
-        mode='outlined'
+        mode="outlined"
         label="Contrasena"
         secureTextEntry={secure}
-        right={<TextInput.Icon name="eye" onPress={() => setSecure(!secure)} />}
+        right={<TextInput.Icon name="eye" color={colors.primary} onPress={() => setSecure(!secure)} />}
       />
 
       <View style={styles.containerButtons}>

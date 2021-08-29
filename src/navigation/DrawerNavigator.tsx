@@ -15,7 +15,7 @@ const Drawer = createDrawerNavigator();
 interface Props extends DrawerScreenProps<any,any> {}
 function DrawerNavigator({navigation}:Props) {
   const {width} = useWindowDimensions();
-   console.log(navigation)
+
    useEffect(() => {
      navigation.setOptions({
        headerShown: false,
@@ -53,7 +53,6 @@ export default DrawerNavigator
 const MenuInterno = ({navigation}:any ) => {
   const {colors} = useTheme();
   const [active, setActive] = React.useState('');
-    console.log(navigation);
   return (
     <DrawerContentScrollView
       

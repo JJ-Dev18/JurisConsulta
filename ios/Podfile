@@ -16,6 +16,8 @@ target 'JurisconsultaApp' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'react-native-blur', :path => '../node_modules/@react-native-community/blur'
+
   target 'JurisconsultaAppTests' do
     inherit! :complete
     # Pods for testing

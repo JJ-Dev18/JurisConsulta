@@ -24,6 +24,7 @@ function TopTapAbogado() {
       style={{
         shadowColor: 'transparent',
         elevation: 0,
+        paddingBottom:10,
       }}
       sceneContainerStyle={{
         
@@ -32,35 +33,7 @@ function TopTapAbogado() {
         tabBarIndicatorStyle: {backgroundColor: colors.primary},
       }}
    
-      // screenOptions={({route}) => ({
-      //   tabBarActiveTintColor: colors.background,
-      //   tabBarLabelStyle: {fontSize: 12, fontWeight: 'bold'},
-      //   tabBarStyle: {backgroundColor: colors.primary},
-      //   tabBarIconStyle: {borderColor: 'red'},
-      //   tabBarInactiveTintColor: colors.accent,
-      //   tabBarIndicatorStyle: {backgroundColor: colors.background},
-      //   tabBarPressColor: 'red',
-
-      //   tabBarIcon: ({color, focused}) => {
-      //     focused = true;
-      //     let iconName: string = '';
-      //     switch (route.name) {
-      //       case 'Inicio':
-      //         iconName = 'home';
-      //         break;
-
-      //       case 'Abogados':
-      //         iconName = 'people-outline';
-      //         break;
-
-      //       case 'Comprar':
-      //         iconName = 'shopping-cart';
-      //         break;
-      //     }
-
-      //     return <Icon name={iconName} size={20} color={color} />;
-      //   },
-      // })}
+     
       >
         
       <Tab.Screen name="Lista Abogados" component={ListAbogados} />

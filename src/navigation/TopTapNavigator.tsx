@@ -45,7 +45,7 @@ function TopTapNavigator({navigation}: Props) {
         height: 20
       }}
       sceneContainerStyle={{
-        backgroundColor: 'white',
+        
       }}
       screenOptions={({route}) => ({
         tabBarActiveTintColor: colors.background,
