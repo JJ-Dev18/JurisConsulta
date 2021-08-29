@@ -12,7 +12,6 @@ import TopTapAbogado from './TopTapAbogados';
 import DrawerNavigator from './DrawerNavigator';
 import BarraBusqueda from '../components/abogados/BarraBusqueda';
 import { DrawerScreenProps } from '@react-navigation/drawer';
-import { findNonSerializableValue } from '@reduxjs/toolkit';
 
 
 
@@ -24,12 +23,12 @@ function TopTapNavigator({navigation}: Props) {
   //  const navigator = useNavigation();
   
    const { colors } = useTheme()
-   console.log('este es el top navigator' , navigation)
   useEffect(() => {
     navigation.setOptions({
       headerShown: true,
       headerStyle: {height: 40},
       headerLeft: undefined,
+      
       headerRight: () => (
         <Icon name="notifications" size={20} onPress={() => navigation.toggleDrawer()} />
       ),
@@ -38,6 +37,8 @@ function TopTapNavigator({navigation}: Props) {
 
   return (
     <Tab.Navigator
+
+      tabBarPosition= 'bottom'
       style={{
         // shadowColor: 'transparent',
         elevation: 6,
@@ -54,6 +55,7 @@ function TopTapNavigator({navigation}: Props) {
         tabBarInactiveTintColor: colors.accent,
         tabBarIndicatorStyle: {backgroundColor: colors.background},
         tabBarPressColor: 'red',
+      
 
         tabBarIcon: ({color, focused}) => {
           // color = colors.primary;

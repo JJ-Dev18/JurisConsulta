@@ -6,10 +6,10 @@ export const ListMisAbogados = () => {
   return (
     <View>
    
+      {/* <Abogado />
       <Abogado />
       <Abogado />
-      <Abogado />
-      <Abogado />
+      <Abogado /> */}
     </View>
   );
 }

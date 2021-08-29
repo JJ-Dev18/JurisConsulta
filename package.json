@@ -19,6 +19,7 @@
     "@reduxjs/toolkit": "^1.6.1",
     "@types/react-native-snap-carousel": "^3.8.4",
     "@types/react-redux": "^7.1.18",
+    "axios": "^0.21.1",
     "react": "17.0.2",
     "react-native": "0.65.1",
     "react-native-gesture-handler": "^1.10.3",

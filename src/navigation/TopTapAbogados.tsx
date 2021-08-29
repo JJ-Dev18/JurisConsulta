@@ -26,7 +26,7 @@ function TopTapAbogado() {
         elevation: 0,
       }}
       sceneContainerStyle={{
-        backgroundColor: 'white',
+        
       }}
       screenOptions ={{
         tabBarIndicatorStyle: {backgroundColor: colors.primary},

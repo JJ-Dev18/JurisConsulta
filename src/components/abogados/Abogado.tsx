@@ -1,8 +1,14 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Avatar, Badge, Paragraph } from 'react-native-paper';
+import { Usuario } from '../../interfaces/abogadosInterface';
 
-export const Abogado = () => {
+interface Props {
+  user : Usuario
+
+}
+
+export const Abogado = ({user}:Props) => {
   return (
     <TouchableOpacity style={styles.content}>
       <Avatar.Image
@@ -12,7 +18,7 @@ export const Abogado = () => {
         }}
       />
       <View style={styles.contentInfo}>
-        <Text> MAIRA FERNANDA NINO MORENO</Text>
+        <Text> {user.nombre}</Text>
         <Paragraph> Derecho Civil </Paragraph>
       </View>
       <View>
@@ -26,21 +32,22 @@ export const Abogado = () => {
 const styles = StyleSheet.create({
   content: {
     marginTop: 10,
-    padding: 25,
+    backgroundColor : 'white',
+    padding: 20,
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    borderWidth: 1,
-    elevation: 20,
-    borderRadius: 20,
+    // borderWidth: 1,
+    elevation: 9,
+    borderRadius: 10,
     borderColor: 'gray',
     shadowOffset: {
       width: 0,
-      height: 9,
+      height: 10,
     },
-    shadowColor: '#fff',
-    shadowOpacity: 0.6,
-    shadowRadius: 3.86,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 7,
   },
   contentInfo: {
     flexDirection: 'column',
