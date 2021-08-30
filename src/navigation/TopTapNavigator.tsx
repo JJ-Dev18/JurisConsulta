@@ -28,16 +28,17 @@ function TopTapNavigator({navigation}: Props) {
       headerShown: true,
       headerStyle: {height: 40},
       headerLeft: undefined,
+      headerTintColor  : colors.primary,
       
       headerRight: () => (
-        <Icon name="notifications" size={20} onPress={() => navigation.toggleDrawer()} />
+        <Icon name="notifications" color={colors.primary}  style={{marginRight: 20}} size={20} onPress={() => navigation.toggleDrawer()} />
       ),
     });
   });
 
   return (
     <Tab.Navigator
-
+       
       tabBarPosition= 'bottom'
       style={{
         // shadowColor: 'transparent',

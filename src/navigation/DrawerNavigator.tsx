@@ -27,6 +27,7 @@ function DrawerNavigator({navigation}:Props) {
       drawerContent={props => <MenuInterno {...props} />}
 
       screenOptions={{
+        
         headerLeftLabelVisible : false,
         headerTitle:'',
         drawerLabelStyle: {color:'white'},

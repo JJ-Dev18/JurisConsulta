@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     },
     msgBienvenida:{
       width:'90%',
-      borderRadius: 20,
+      borderRadius: 15,
       elevation: 30,
       backgroundColor: 'white',
       padding: 20

@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { Avatar, Badge, Paragraph } from 'react-native-paper';
+import { Avatar, Badge, Paragraph, useTheme } from 'react-native-paper';
 import { Usuario } from '../../interfaces/abogadosInterface';
 
 interface Props {
@@ -9,6 +9,8 @@ interface Props {
 }
 
 export const Abogado = ({user}:Props) => {
+
+  const { colors } = useTheme()
   return (
     <TouchableOpacity style={styles.content}>
       <Avatar.Image
@@ -22,7 +24,7 @@ export const Abogado = ({user}:Props) => {
         <Paragraph> Derecho Civil </Paragraph>
       </View>
       <View>
-      <Badge style={styles.badge}>VIP</Badge>
+      <Badge style={{backgroundColor: colors.accent}}>VIP</Badge>
 
       </View>
     </TouchableOpacity>
@@ -53,7 +55,5 @@ const styles = StyleSheet.create({
   contentInfo: {
     flexDirection: 'column',
   },
-  badge: {
-    backgroundColor: 'yellow',
-  },
+ 
 });
