@@ -5,7 +5,6 @@ import {LoginScreen} from '../screens/LoginScreen';
 import {ChooseScreen} from '../screens/ChooseScreen';
 import {HomeScreen} from '../screens/HomeScreen';
 import {RegisterScreen} from '../screens/RegisterScreen';
-import { StackHome } from './StackHome';
 import DrawerNavigator from './DrawerNavigator';
 
 import { useTheme } from 'react-native-paper';

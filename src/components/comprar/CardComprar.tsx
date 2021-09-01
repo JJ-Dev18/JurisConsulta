@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Image, Text, StyleSheet } from 'react-native';
 import { useTheme } from 'react-native-paper';
+import { StackScreenProps } from '@react-navigation/stack';
+
 
 export const CardComprar = () => {
 

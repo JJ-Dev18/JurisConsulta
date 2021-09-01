@@ -5,16 +5,18 @@ import { DrawerScreenProps } from '@react-navigation/drawer';
 import DrawerNavigator from '../navigation/DrawerNavigator';
 import { CardEspecializaciones } from '../components/Principal/CardEspecializaciones';
 import Carousel from 'react-native-snap-carousel';
-import { Paragraph, Card, Button } from 'react-native-paper';
+import { Paragraph, Card, Button, useTheme, Surface } from 'react-native-paper';
+import ButtonVideo from '../components/Principal/Fab';
 
 interface Props extends DrawerScreenProps <any, any> {}
 export const HomeScreen = ({navigation,route}: Props) => {
 
   const {width} = useWindowDimensions()
+  const { colors } = useTheme()
   return (
-    <View style={styles.container}>
+    <Surface style={styles.container}>
       <View style={styles.msgBienvenida}>
-        <Text style={styles.textBienvenida}>Bienvenido USERNAME </Text>
+        <Text style={{...styles.textBienvenida,color: colors.primary}}>Bienvenido USERNAME </Text>
         <Paragraph style={styles.pBienvenida}>
           En JurisConsulta podras recibir Lorem ipsum dolor, sit amet
           consectetur adipisicing elit. Aliquid deserunt fuga omnis voluptates
@@ -31,10 +33,9 @@ export const HomeScreen = ({navigation,route}: Props) => {
           inactiveSlideOpacity={0.9}
         />
       </View>
-      <View>
-        <Button mode="contained"> Premium </Button>
-      </View>
-    </View>
+      <ButtonVideo />
+      <View></View>
+    </Surface>
   );
 }
 

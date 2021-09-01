@@ -1,32 +1,62 @@
 import React from 'react'
 import { View, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
 
+interface Props extends StackScreenProps<any, any> {}
 
-export const MetodosPago = () => {
+export const MetodosPago = ({navigation}:Props) => {
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() =>
+          navigation.navigate('Formulario Pago tarjeta', {
+            titulo: 'Tarjeta de credito',
+            visible: 'flex',
+          })
+        }>
         <ImageBackground
           resizeMode="contain"
           source={require('../../images/metodosPago/credittcard.png')}
           style={styles.image}
         />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() =>
+          navigation.navigate('Formulario Pago', {
+            titulo: 'PSE',
+            visible: 'flex',
+          })
+        }>
         <ImageBackground
           resizeMode="contain"
           source={require('../../images/metodosPago/PSE.png')}
           style={styles.image}
         />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() =>
+          navigation.navigate('Formulario Pago', {
+            titulo: 'Baloto',
+          })
+        }>
         <ImageBackground
           resizeMode="contain"
           source={require('../../images/metodosPago/baloto.jpg')}
           style={styles.image}
         />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() =>
+          navigation.navigate('Formulario Pago', {
+            titulo: 'Efecty',
+          
+          })
+        }>
         <ImageBackground
           resizeMode="contain"
           source={require('../../images/metodosPago/efecty.png')}

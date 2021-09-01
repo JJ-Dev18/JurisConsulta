@@ -1,9 +1,9 @@
 import React from 'react'
 import { View, Text } from 'react-native';
-import { Card, Title, Paragraph, Button, Avatar } from 'react-native-paper';
+import { Card, Title, Paragraph, Button, Avatar, useTheme } from 'react-native-paper';
 
 export const CardEspecializaciones = () => {
-
+const {colors} = useTheme();
   const LeftContent = 
   (props:any) => <Avatar.Icon {...props} icon="folder" />;
   return (
@@ -16,7 +16,7 @@ export const CardEspecializaciones = () => {
           }}
         />
       </Card>
-      <Text style={{fontWeight: 'bold', elevation: 33, textAlign: 'center'}}>
+      <Text style={{fontWeight: 'bold', elevation: 33, textAlign: 'center',color: colors.primary}}>
         {' '}
         Laboral{' '}
       </Text>

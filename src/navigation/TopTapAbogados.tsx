@@ -6,6 +6,7 @@ import {useTheme} from 'react-native-paper';
 import { ListAbogados } from '../components/abogados/ListAbogados';
 import { ListMisAbogados } from '../components/abogados/ListMisAbogados';
 import BarraBusqueda from '../components/abogados/BarraBusqueda';
+import StackAbogado from './StackAbogado';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -16,6 +17,7 @@ function TopTapAbogado() {
   useEffect(() => {
     navigator.setOptions({
       headerShown: false,
+    
     });
   }, []);
 
@@ -24,19 +26,20 @@ function TopTapAbogado() {
       style={{
         shadowColor: 'transparent',
         elevation: 0,
-        paddingBottom:10,
+        paddingBottom: 10,
       }}
-      sceneContainerStyle={{
+      sceneContainerStyle={{}}
+      screenOptions={{
+        // tabBarLabelStyle: {color: 'white'},
+        tabBarActiveTintColor: 'white',
+        tabBarIndicatorStyle: {backgroundColor: colors.accent},
+        tabBarStyle: {backgroundColor: colors.primary},
         
-      }}
-      screenOptions ={{
-        tabBarIndicatorStyle: {backgroundColor: colors.primary},
-      }}
-   
-     
-      >
-        
-      <Tab.Screen name="Lista Abogados" component={ListAbogados} />
+        tabBarInactiveTintColor: colors.accent,
+        // tabBarInactiveTintColor: colors.accent,
+        // tabBarIndicatorStyle: {backgroundColor: colors.background},
+      }}>
+      <Tab.Screen name="Lista Abogados" component={StackAbogado} />
       <Tab.Screen name="Mis abogados" component={ListMisAbogados} />
     </Tab.Navigator>
   );

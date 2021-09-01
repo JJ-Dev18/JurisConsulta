@@ -8,11 +8,20 @@ import { ListMisAbogados } from './ListMisAbogados';
 import useAbogados from '../../hooks/useAbogados';
 import { ActivityIndicator, useTheme } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
+import { } from '@react-navigation/native';
+import { StackScreenProps } from '@react-navigation/stack';
 
-
-export const ListAbogados = () => {
+interface Props extends StackScreenProps <any, any> {}
+ 
+export const ListAbogados = ({navigation}:Props) => {
 
    const {totalAbogados,isLoading,infoAbogados}  = useAbogados()
+      
+   useEffect(() => {
+      navigation.setOptions({
+         headerShown: false
+      })
+   }, [])
    const { colors } = useTheme()
   if(isLoading) {
     return (

@@ -12,6 +12,8 @@ import TopTapAbogado from './TopTapAbogados';
 import DrawerNavigator from './DrawerNavigator';
 import BarraBusqueda from '../components/abogados/BarraBusqueda';
 import { DrawerScreenProps } from '@react-navigation/drawer';
+import TarjetaCredito from '../components/comprar/formMetodos/FormMetodos';
+import { StackComprar } from './StackComprar';
 
 
 
@@ -26,7 +28,7 @@ function TopTapNavigator({navigation}: Props) {
   useEffect(() => {
     navigation.setOptions({
       headerShown: true,
-      headerStyle: {height: 40},
+      
       headerLeft: undefined,
       headerTintColor  : colors.primary,
       
@@ -49,13 +51,13 @@ function TopTapNavigator({navigation}: Props) {
         
       }}
       screenOptions={({route}) => ({
-        tabBarActiveTintColor: colors.background,
+        tabBarActiveTintColor: 'white',
         tabBarLabelStyle: {fontSize: 12, fontWeight: 'bold'},
         tabBarStyle: {backgroundColor: colors.primary},
-        tabBarIconStyle: {borderColor: 'red'},
+        tabBarPressColor : colors.accent ,
         tabBarInactiveTintColor: colors.accent,
         tabBarIndicatorStyle: {backgroundColor: colors.background},
-        tabBarPressColor: 'red',
+       
       
 
         tabBarIcon: ({color, focused}) => {
@@ -68,7 +70,7 @@ function TopTapNavigator({navigation}: Props) {
               break;
 
             case 'Abogados':
-              iconName = 'people-outline';
+              iconName = 'gavel';
               break;
 
             case 'Comprar':
@@ -85,7 +87,7 @@ function TopTapNavigator({navigation}: Props) {
       <Tab.Screen name="Inicio" component={HomeScreen} />
       {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}
       <Tab.Screen name="Abogados" component={TopTapAbogado} />
-      <Tab.Screen name="Comprar" component={Comprar} />
+      <Tab.Screen name="Comprar" component={StackComprar} />
       {/* <Tab.Screen name="Drawer" component={DrawerPrincipal} /> */}
     </Tab.Navigator>
   );

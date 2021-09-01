@@ -14,10 +14,10 @@ interface Props extends StackScreenProps<any, any>{}
 export const LoginScreen = ({navigation}: Props) => {
   const [loading, setloading] = useState(false);
   const {width, height} = useWindowDimensions();
-  const navigator = useNavigation()
+  // const navigator = useNavigation()
   
   useEffect(() => {
-    navigator.setOptions({
+    navigation.setOptions({
       headerShown: false ,
     })
     setTimeout(() => {

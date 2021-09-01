@@ -8,6 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 import {  AbogadosScreen } from '../screens/AbogadosScreen';
 import TopTapNavigator from './TopTapNavigator';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { PerfilCliente } from '../components/cliente/PerfilCliente';
 
 
 
@@ -40,9 +41,9 @@ function DrawerNavigator({navigation}:Props) {
         component={TopTapNavigator}
       />
       <Drawer.Screen
-        name="Doctores"
-        options={{title: 'Doctores'}}
-        component={AbogadosScreen}
+        name="Perfil"
+        options={{title: 'Mi perfil'}}
+        component={PerfilCliente}
       />
       
     </Drawer.Navigator>
@@ -53,11 +54,9 @@ export default DrawerNavigator
 
 const MenuInterno = ({navigation}:any ) => {
   const {colors} = useTheme();
-  const [active, setActive] = React.useState('');
+  const [active, setActive] = React.useState('Home');
   return (
-    <DrawerContentScrollView
-      
-    >
+    <DrawerContentScrollView>
       <View style={{...styles.contentAvatar, backgroundColor: colors.primary}}>
         <Avatar.Image
           style={styles.imgAvatar}
@@ -75,24 +74,97 @@ const MenuInterno = ({navigation}:any ) => {
 
       <DrawerPaper.Section title="Principal">
         <DrawerPaper.Item
-          label="Perfil"
-          active={active === 'first'}
-          onPress={() => navigation.navigate('Home')}
-          icon={({size,color}) => (
+          label="Home"
+          active={active === 'Home'}
+          onPress={() => {
+            setActive('Home') 
+            navigation.navigate('Home')}}
+          icon={({size, color}) => (
             <Icon
-              name="person"
+              name="home"
               size={20}
               color={color}
-              onPress={() => navigation.toggleDrawer()}
+             
             />
           )}
         />
         <DrawerPaper.Item
-          label="Abogados"
-          active={active === 'second'}
-          onPress={() => navigation.navigate('Doctores')}
-          icon="gavel"
+          label="Perfil"
+          active={active === 'Perfil'}
+          onPress={() => {
+            setActive('Perfil')
+            navigation.navigate('Perfil');
+          }}
+          icon={({size, color}) => (
+            <Icon
+              name="person"
+              size={20}
+              color={color}
+             
+            />
+          )}
         />
+        <DrawerPaper.Item
+          label="Mis citas"
+          active={active === 'third'}
+          // onPress={() => navigation.navigate('Doctores')}
+          icon={({size, color}) => (
+            <Icon
+              name="event"
+              size={20}
+              color={color}
+            
+            />
+          )}
+        />
+        <DrawerPaper.Item
+          label="Historial"
+          active={active === 'second'}
+          // onPress={() => navigation.navigate('Doctores')}
+          icon={({size, color}) => (
+            <Icon
+              name="history"
+              size={20}
+              color={color}
+              
+            />
+          )}
+        />
+        <DrawerPaper.Item
+          label="Cupones"
+          active={active === 'second'}
+          // onPress={() => navigation.navigate('Doctores')}
+          icon="ticket"
+        />
+        <DrawerPaper.Item
+          label="Ayuda"
+          active={active === 'second'}
+          // onPress={() => navigation.navigate('Doctores')}
+          icon={({size, color}) => (
+            <Icon
+              name="help"
+              size={20}
+              color={color}
+              
+            />
+          )}
+        />
+
+        <DrawerPaper.Item
+          label="Configuracion"
+          active={active === 'second'}
+          icon={({size, color}) => (
+            <Icon
+              name="settings"
+              size={20}
+              color={color}
+         
+            />
+          )}
+          // onPress={() => navigation.navigate('Doctores')}
+        />
+      </DrawerPaper.Section>
+      <DrawerPaper.Section>
         <DrawerPaper.Item
           label="Cerrar Sesion"
           active={active === 'second'}
