@@ -1,13 +1,14 @@
 import React from 'react'
 import { View, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
+import { useTheme } from 'react-native-paper';
 
 interface Props extends StackScreenProps<any, any> {}
 
 export const MetodosPago = ({navigation}:Props) => {
-
+ const { colors } = useTheme()
   return (
-    <View style={styles.container}>
+    <View style={{...styles.container,backgroundColor:colors.background}}>
       <TouchableOpacity
         style={styles.button}
         onPress={() =>
@@ -45,7 +46,7 @@ export const MetodosPago = ({navigation}:Props) => {
         }>
         <ImageBackground
           resizeMode="contain"
-          source={require('../../images/metodosPago/baloto.jpg')}
+          source={require('../../images/metodosPago/baloto.png')}
           style={styles.image}
         />
       </TouchableOpacity>
@@ -88,7 +89,8 @@ const styles = StyleSheet.create({
     height:'45%',
     borderWidth: 1 ,
     borderRadius: 10,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderColor: 'white'
     // backgroundColor: 'gray'
   },
   image:{

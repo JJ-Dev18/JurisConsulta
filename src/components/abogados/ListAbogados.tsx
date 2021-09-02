@@ -16,7 +16,7 @@ interface Props extends StackScreenProps <any, any> {}
 export const ListAbogados = ({navigation}:Props) => {
 
    const {totalAbogados,isLoading,infoAbogados}  = useAbogados()
-      
+  //  const { colors } = useTheme() 
    useEffect(() => {
       navigation.setOptions({
          headerShown: false
@@ -26,13 +26,13 @@ export const ListAbogados = ({navigation}:Props) => {
   if(isLoading) {
     return (
       <View style={{position:'absolute',top:0, zIndex:999,justifyContent: 'center',flex: 1 }}>
-        <ActivityIndicator color="red" size={50}/>
+        <ActivityIndicator color={colors.backdrop} size={50}/>
         
       </View>
     )
   }
   return (
-    <ScrollView style={{padding: 15}}>
+    <ScrollView style={{padding: 10,backgroundColor:colors.background,paddingBottom:100}}>
       <BarraBusqueda />
      {
        infoAbogados.map(abogado => (

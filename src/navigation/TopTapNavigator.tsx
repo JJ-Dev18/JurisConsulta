@@ -30,11 +30,9 @@ function TopTapNavigator({navigation}: Props) {
       headerShown: true,
       
       headerLeft: undefined,
-      headerTintColor  : colors.primary,
+     
       
-      headerRight: () => (
-        <Icon name="notifications" color={colors.primary}  style={{marginRight: 20}} size={20} onPress={() => navigation.toggleDrawer()} />
-      ),
+    
     });
   });
 

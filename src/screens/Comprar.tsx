@@ -17,7 +17,7 @@ export const Comprar = ({navigation,route}:Props) => {
     });
   }, [])
   return (
-    <View  style={{padding: 25,justifyContent: 'center',alignItems: 'center',flex: 1,width:'100%' }}>
+    <View  style={{padding: 25,justifyContent: 'center',alignItems: 'center',flex: 1,width:'100%' ,backgroundColor:colors.background}}>
 
       <Text style={{...styles.title,color: colors.accent}}>Saldo</Text>
       <CardComprar /> 
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
       elevation: 3 
     },
     title: {
-      fontWeight : '400',
+      fontWeight : '600',
       fontSize: 25
     }
 });

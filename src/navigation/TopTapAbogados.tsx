@@ -26,7 +26,7 @@ function TopTapAbogado() {
       style={{
         shadowColor: 'transparent',
         elevation: 0,
-        paddingBottom: 10,
+        paddingBottom: 0,
       }}
       sceneContainerStyle={{}}
       screenOptions={{

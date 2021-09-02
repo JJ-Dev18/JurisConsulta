@@ -18,7 +18,7 @@ export const PerfilCliente = ({navigation}: Props) => {
    }, [])
   const {colors} = useTheme();
   return (
-    <ScrollView contentContainerStyle={styles.scroll}>
+    <ScrollView contentContainerStyle={{...styles.scroll,backgroundColor:colors.background}}>
 {/*     
       <Button
         style={styles.goBack}
@@ -39,24 +39,7 @@ export const PerfilCliente = ({navigation}: Props) => {
         />
         <Caption>Cliente</Caption>
         <Title> Juan Jose Murillo Bernal</Title>
-        <View style={styles.contentIconos}>
-          <TouchableOpacity>
-            <Icon
-              name="comments"
-              color={colors.primary}
-              size={30}
-              style={{borderWidth: 1, borderRadius: 10, padding: 5}}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Icon
-              name="video"
-              color={colors.primary}
-              size={30}
-              style={{borderWidth: 1, borderRadius: 10, padding: 5}}
-            />
-          </TouchableOpacity>
-        </View>
+        
       </View>
 
       <View style={{width: '100%'}}>

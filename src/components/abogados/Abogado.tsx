@@ -14,7 +14,7 @@ export const Abogado = ({user}:Props) => {
   const navigation = useNavigation()
   const { colors } = useTheme()
   return (
-    <TouchableOpacity style={styles.content} onPress={()=> {navigation.dispatch(
+    <TouchableOpacity style={{...styles.content}} onPress={()=> {navigation.dispatch(
       CommonActions.navigate('PerfilAbogado')
     )}}>
       <Avatar.Image
@@ -25,7 +25,7 @@ export const Abogado = ({user}:Props) => {
       />
       <View style={styles.contentInfo}>
         <Text> {user.nombre}</Text>
-        <Paragraph> Derecho Civil </Paragraph>
+        <Text> Derecho Civil </Text>
       </View>
       <View>
       <Badge style={{backgroundColor: colors.accent}}>VIP</Badge>

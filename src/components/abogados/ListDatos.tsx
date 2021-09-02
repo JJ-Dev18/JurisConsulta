@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { List, useTheme } from 'react-native-paper';
-import {Text} from 'react-native'
+import { Text, useColorScheme } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const ListDatos = () => {
@@ -16,15 +16,21 @@ const ListDatos = () => {
         titleStyle={{backgroundColor: colors.primary, color: 'white'}}>
         <List.Item
           title="Genero"
-          right={({color, style}) => <Text>Femenino </Text>}
+          right={({color, style}) => (
+            <Text style={{color: color}}>Femenino </Text>
+          )}
         />
         <List.Item
           title="Pais"
-          right={({color, style}) => <Text>Colombia </Text>}
+          right={({color, style}) => (
+            <Text style={{color: color}}>Colombia </Text>
+          )}
         />
         <List.Item
           title="Colombia"
-          right={({color, style}) => <Text>Ibague </Text>}
+          right={({color, style}) => (
+            <Text style={{color: color}}>Ibague </Text>
+          )}
         />
       </List.Section>
       <List.Section

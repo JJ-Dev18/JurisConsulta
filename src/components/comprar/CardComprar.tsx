@@ -9,15 +9,20 @@ export const CardComprar = () => {
    const {colors} = useTheme();
   return (
     <View style={{...styles.card}}>
-      <View style={styles.ring}>
-        <View style={styles.ring2}></View>
+      <View style={{...styles.ring, borderColor: colors.disabled}}>
+        <View style={{...styles.ring2, borderColor: colors.disabled}}></View>
       </View>
       <View style={{}}>
         <Text style={styles.user}>JURISCONSULTA</Text>
       </View>
-      <View style={{alignItems: 'flex-start',justifyContent:'space-around',marginTop:20}}>
+      <View
+        style={{
+          alignItems: 'flex-start',
+          justifyContent: 'space-around',
+          marginTop: 20,
+        }}>
         <Image
-          style={{width: 60, height: 40, }}
+          style={{width: 60, height: 40}}
           source={{
             uri: 'https://res.cloudinary.com/dbi95d6gs/image/upload/v1630283052/pngwing.com_2_kw1kdi.png',
           }}
@@ -48,7 +53,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#485767',
     width: '100%',
     height: 200,
-    marginTop: 20 ,
+    marginTop: 20,
     elevation: 3,
     borderRadius: 20,
     // backfaceVisibility: 'hidden',
@@ -86,7 +91,7 @@ const styles = StyleSheet.create({
     height: 300,
     borderRadius: 300,
     borderWidth: 40,
-    borderColor: 'rgba(255, 255, 255, 0.1);',
+    borderColor: 'rgba(0, 0, 0, 0.1);',
     bottom: -120,
     right: -150,
   },
@@ -97,8 +102,9 @@ const styles = StyleSheet.create({
     height: 300,
     borderRadius: 300,
     borderWidth: 30,
-    borderColor: 'rgba(255, 255, 255, 0.1);',
+    borderColor: 'rgba(0, 0, 0, 0.1);',
     bottom: -120,
     right: -10,
+    zIndex: -9,
   },
 });

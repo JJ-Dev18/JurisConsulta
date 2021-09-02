@@ -2,10 +2,11 @@ import {configureStore} from '@reduxjs/toolkit';
 import { authReducer } from '../reducers/AuthReducer';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import { UiReducer } from '../reducers/UiReducer';
 // ...
 const reducers = combineReducers({
   auth: authReducer,
-
+  Ui :UiReducer
   // notes: notesReducer,
 });
 export const store = createStore(
