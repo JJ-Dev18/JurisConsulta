@@ -1,9 +1,9 @@
 import React , { useState,useEffect } from 'react'
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { Button, useTheme } from 'react-native-paper';
-import { CardComprar } from '../components/comprar/CardComprar';
-import { MetodosPago } from '../components/comprar/MetodosPago';
-import FormMetodos from '../components/comprar/formMetodos/FormMetodos';
+import { CardComprar } from '../../components/comprar/CardComprar';
+import { MetodosPago } from '../../components/comprar/MetodosPago';
+import FormMetodos from '../../components/comprar/formMetodos/FormMetodos';
 import { StackScreenProps } from '@react-navigation/stack';
 
 interface Props extends StackScreenProps<any, any> {}

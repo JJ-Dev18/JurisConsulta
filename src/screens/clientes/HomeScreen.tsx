@@ -1,10 +1,10 @@
 import React,{useState} from 'react'
 import { View, Text, useWindowDimensions, StyleSheet } from 'react-native';
 import { DrawerScreenProps } from '@react-navigation/drawer';
-import { CardEspecializaciones } from '../components/Principal/CardEspecializaciones';
+import { CardEspecializaciones } from '../../components/Principal/CardEspecializaciones';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { Paragraph, Card, Button, useTheme, Surface } from 'react-native-paper';
-import ButtonVideo from '../components/Principal/Fab';
+import ButtonVideo from '../../components/Principal/Fab';
 
 interface Props extends DrawerScreenProps <any, any> {}
 export const HomeScreen = ({navigation,route}: Props) => {

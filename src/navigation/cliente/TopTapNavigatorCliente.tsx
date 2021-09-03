@@ -1,19 +1,11 @@
 import React ,{ useEffect} from 'react'
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import { HomeScreen } from '../screens/HomeScreen';
-import { SettingsScreen } from '../screens/SettingsScreen';
-import { AbogadosScreen } from '../screens/AbogadosScreen';
-import { Comprar } from '../screens/Comprar';
-import { useNavigation } from '@react-navigation/native';
-import {Button} from 'react-native'
-import Icon  from 'react-native-vector-icons/MaterialIcons';
+import { HomeScreen } from '../../screens/clientes/HomeScreen';
+import Icon  from 'react-native-vector-icons/FontAwesome5';
 import {  useTheme, Title } from 'react-native-paper';
-import TopTapAbogado from './TopTapAbogados';
-import DrawerNavigator from './DrawerNavigator';
-import BarraBusqueda from '../components/cliente/abogados/BarraBusqueda';
+import TopTapAbogado from '../TopTapAbogados';
 import { DrawerScreenProps } from '@react-navigation/drawer';
-import TarjetaCredito from '../components/comprar/formMetodos/FormMetodos';
-import { StackComprar } from './StackComprar';
+import { StackComprar } from '../StackComprar';
 
 
 
@@ -28,11 +20,7 @@ function TopTapNavigator({navigation}: Props) {
   useEffect(() => {
     navigation.setOptions({
       headerShown: true,
-      
       headerLeft: undefined,
-     
-      
-    
     });
   });
 
