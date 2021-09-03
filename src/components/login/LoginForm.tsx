@@ -13,14 +13,14 @@ export const LoginForm = () => {
   // console.log(navigator)
   // const { colors }= useTheme()
   return (
-    <View style={styles.container}>
+    <View style={{...styles.container,backgroundColor:colors.background,flex:1}}>
       <Image
         style={{width: 100, height: 100}}
         source={{
           uri: 'https://res.cloudinary.com/dbi95d6gs/image/upload/v1630265600/Logo/J-removebg-preview_1_bjax4y.png',
         }}
       />
-      <Text style={{...styles.title, color: colors.primary}}>
+      <Text style={{...styles.title, color: colors.text}}>
         {' '}
         Iniciar Sesion
       </Text>
@@ -75,7 +75,7 @@ export default LoginForm;
 const styles = StyleSheet.create({
   container:{
     alignItems : 'center',
-    justifyContent : 'space-around'
+    justifyContent : 'center'
   },
   title:{
     fontSize : 30,

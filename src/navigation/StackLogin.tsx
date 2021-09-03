@@ -15,10 +15,10 @@ import {
 import {RegisterScreen} from '../screens/RegisterScreen';
 import DrawerNavigator from './DrawerNavigator';
 
-import { useTheme } from 'react-native-paper';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import { Appearance, useColorScheme } from 'react-native';
+import { useTheme } from 'react-native-paper';
 
 
 const Stack = createStackNavigator();
@@ -52,30 +52,25 @@ const CombineDarkTheme = {
 };
 //  const colorScheme = Appearance.getColorScheme();
 export const StackLogin = () => {
-  const scheme = useColorScheme();
-  const {colors} = useTheme();
+  // const scheme = useColorScheme();
+  
   const {darkTheme} = useSelector((state: RootState) => state.Ui);
-  console.log(darkTheme)
- 
+  // console.log(darkTheme)
+  const { colors } = useTheme()
   return (
-    <PaperProvider theme={(darkTheme) ? CombineDarkTheme : CombineDefaultTheme}>
+    <PaperProvider theme={darkTheme ? CombineDarkTheme : CombineDefaultTheme}>
       <NavigationContainer>
         <Stack.Navigator
           // initialRouteName="Home"
-
           screenOptions={{
             headerShown: true,
-            headerTintColor: 'white',
+            headerTintColor: darkTheme ? 'white' : 'black',
             headerStyle: {
-              backgroundColor: colors.primary,
+              backgroundColor: darkTheme ? 'black' : 'white',
             },
           }}>
           <Stack.Screen name="Iniciar Sesion" component={LoginScreen} />
-          <Stack.Screen
-            name="Escoger tipo"
-            options={{presentation: 'modal'}}
-            component={ChooseScreen}
-          />
+          <Stack.Screen name="Escoger tipo" component={ChooseScreen} />
           <Stack.Screen name="Registrarse" component={RegisterScreen} />
           <Stack.Screen name="Principal" component={DrawerNavigator} />
         </Stack.Navigator>

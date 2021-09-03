@@ -17,7 +17,7 @@ export const RegisterForm = ({textButton,navigation}:Props) => {
   // console.log(navigator)
   // const { colors }= useTheme()
   return (
-    <View style={styles.container}>
+    <View style={{...styles.container,backgroundColor:colors.background,flex:1}}>
       <Image
         style={{width: 100, height: 100}}
         source={{
@@ -75,7 +75,7 @@ export default RegisterForm;
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
   },
   title: {
     fontSize: 30,

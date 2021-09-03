@@ -3,6 +3,7 @@ import { View, TouchableOpacity, StyleSheet,Text } from 'react-native';
 import { Surface, useTheme } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import moment from 'moment';
+import { SelectFecha } from '../app/SelectFecha';
 export const Citas = () => {
    
    moment.locale('es')
@@ -39,19 +40,7 @@ export const Citas = () => {
         <Icon name="calendar" color={colors.primary} size={18} />
         <Text>Agenda tu cita </Text>
       </TouchableOpacity>
-      <View style={styles.contador}>
-        <TouchableOpacity
-           onPress={restarFecha}
-          style={{...styles.button, backgroundColor: colors.primary}}>
-          <Icon name="arrow-left" color="white" />
-        </TouchableOpacity>
-        <Text style={{color:colors.text}}>{state.StringDate}</Text>
-        <TouchableOpacity
-          style={{...styles.button, backgroundColor: colors.primary}}
-          onPress={sumarFecha}>
-          <Icon name="arrow-right" color="white" />
-        </TouchableOpacity>
-      </View>
+      <SelectFecha/>
 
       <Surface style={styles.citas}>
         <Icon name="calendar" color={colors.primary} size={40} />
@@ -61,42 +50,26 @@ export const Citas = () => {
   );
 }
 const styles = StyleSheet.create({
-    agenda:{
-     width:'100%',
-     height:60,
-     paddingVertical:20,
-     paddingHorizontal:100,
-     borderWidth:1,
-     marginBottom:30,
-     backgroundColor: 'white',
-     elevation: 3,
-     flexDirection: 'row',
-     justifyContent: 'space-around',
-     borderRadius:10
-     
-    },
-    contador: {
-     flexDirection: 'row',
-     justifyContent: 'space-around',
-     alignItems: 'center',
-     marginBottom:40,
-     width:'100%'
-    },
-    button:{
-      width:40,
-      height:40,
-      
-      borderRadius: 10,
-      justifyContent : 'center',
-      alignItems:'center'
-    },
-    citas:{
-      backgroundColor:"white",
-      flexDirection:'row',
-      alignItems:'center',
-      justifyContent: 'space-around',
-     width:'100%',
-     height:400,
-     padding:30
-    }
+  agenda: {
+    width: '100%',
+    height: 60,
+    paddingVertical: 20,
+    paddingHorizontal: 100,
+    borderWidth: 1,
+    marginBottom: 30,
+    backgroundColor: 'white',
+    elevation: 3,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    borderRadius: 10,
+  },
+  citas: {
+    backgroundColor: 'white',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    width: '100%',
+    height: 400,
+    padding: 30,
+  },
 });

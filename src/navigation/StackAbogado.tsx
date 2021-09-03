@@ -4,8 +4,11 @@ import FormMetodos from '../components/comprar/formMetodos/FormMetodos';
 import {useTheme, Title} from 'react-native-paper';
 import FormTarjeta from '../components/comprar/formMetodos/FormTarjeta';
 import { createStackNavigator, StackScreenProps } from '@react-navigation/stack';
-import { PerfilAbogado } from '../components/abogados/PerfilAbogado';
-import { ListAbogados } from '../components/abogados/ListAbogados';
+import { PerfilAbogado } from '../components/cliente/abogados/PerfilAbogado';
+import { ListAbogados } from '../components/cliente/abogados/ListAbogados';
+import { Chat } from '../components/cliente/abogados/Chat';
+import { Citas } from '../components/cliente/abogados/Citas';
+import { DetalleCita } from '../components/cliente/abogados/DetalleCita';
 
   const Stack = createStackNavigator();
 
@@ -17,8 +20,8 @@ export const StackAbogado = () => {
       // initialRouteName="Home"
       screenOptions={{
         headerTintColor: 'white',
-       
-        headerTitleStyle: {color: 'white',fontSize:15},
+
+        headerTitleStyle: {color: 'white', fontSize: 15},
         headerShown: false,
         headerStyle: {
           backgroundColor: colors.accent,
@@ -30,6 +33,9 @@ export const StackAbogado = () => {
         options={{title: 'Perfil'}}
         component={PerfilAbogado}
       />
+      <Stack.Screen name="Chat" options={{title: 'Chat'}} component={Chat} />
+      <Stack.Screen name="Citas" component={Citas} />
+      <Stack.Screen name="Detalle cita" component={DetalleCita} />
     </Stack.Navigator>
   );
 };

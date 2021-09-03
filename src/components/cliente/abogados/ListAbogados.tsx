@@ -1,11 +1,11 @@
 import React , { useEffect} from 'react'
 import { View, Text } from 'react-native';
-import DB from '../../api/DB';
-import {  AbogadosInterface } from '../../interfaces/abogadosInterface';
+import DB from '../../../api/DB';
+import {  AbogadosInterface } from '../../../interfaces/abogadosInterface';
 import { Abogado } from './Abogado';
 import BarraBusqueda from './BarraBusqueda';
 import { ListMisAbogados } from './ListMisAbogados';
-import useAbogados from '../../hooks/useAbogados';
+import useAbogados from '../../../hooks/useAbogados';
 import { ActivityIndicator, useTheme } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
 import { } from '@react-navigation/native';

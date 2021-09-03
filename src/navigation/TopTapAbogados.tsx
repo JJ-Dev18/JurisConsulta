@@ -3,9 +3,9 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {useTheme} from 'react-native-paper';
-import { ListAbogados } from '../components/abogados/ListAbogados';
-import { ListMisAbogados } from '../components/abogados/ListMisAbogados';
-import BarraBusqueda from '../components/abogados/BarraBusqueda';
+import { ListAbogados } from '../components/cliente/abogados/ListAbogados';
+import { ListMisAbogados } from '../components/cliente/abogados/ListMisAbogados';
+import BarraBusqueda from '../components/cliente/abogados/BarraBusqueda';
 import StackAbogado from './StackAbogado';
 
 const Tab = createMaterialTopTabNavigator();

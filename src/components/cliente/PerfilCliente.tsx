@@ -3,7 +3,7 @@ import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {Avatar, Caption, Title, useTheme, Button} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import ListDatos from '../abogados/ListDatos';
+import ListDatos from './abogados/ListDatos';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 
 interface Props extends DrawerScreenProps<any, any> {}

@@ -13,6 +13,8 @@ import Cupones from '../components/cliente/Cupones';
 import { useSelector ,useDispatch} from 'react-redux';
 import { RootState } from '../store/store';
 import { setThemeApp } from '../actions/ui';
+import { Configuracion } from '../components/cliente/Configuracion';
+import { Ayuda } from '../components/cliente/Ayuda';
 
 
 
@@ -34,7 +36,7 @@ function DrawerNavigator({navigation}:Props) {
 
   return (
     <Drawer.Navigator
-      drawerContent={props => <MenuInterno {...props} setTheme={setTheme}/>}
+      drawerContent={props => <MenuInterno {...props} setTheme={setTheme} />}
       screenOptions={{
         headerRight: () => (
           <Icon
@@ -46,7 +48,7 @@ function DrawerNavigator({navigation}:Props) {
           />
         ),
         // drawerContentContainerStyle:{backgroundColor:'red'},
-        headerStyle:{backgroundColor:colors.background},
+        headerStyle: {backgroundColor: colors.background},
         headerLeftLabelVisible: false,
         headerTitle: '',
         drawerLabelStyle: {color: colors.background},
@@ -64,6 +66,8 @@ function DrawerNavigator({navigation}:Props) {
       <Drawer.Screen name="Citas" component={Citas} />
       <Drawer.Screen name="Historial" component={Historial} />
       <Drawer.Screen name="Cupones" component={Cupones} />
+      <Drawer.Screen name="Ayuda" component={Ayuda} />
+      <Drawer.Screen name="Configuracion" component={Configuracion} />
     </Drawer.Navigator>
   );
 }
@@ -74,7 +78,8 @@ const MenuInterno = ({navigation,setTheme}:any ) => {
   const {colors} = useTheme();
   const [active, setActive] = React.useState('Home');
   return (
-    <DrawerContentScrollView style={{backgroundColor: colors.background, height: '100%'}}>
+    <DrawerContentScrollView
+      style={{backgroundColor: colors.background, height: '100%'}}>
       <View style={{...styles.contentAvatar, backgroundColor: colors.primary}}>
         <Avatar.Image
           style={styles.imgAvatar}
@@ -144,18 +149,25 @@ const MenuInterno = ({navigation,setTheme}:any ) => {
         />
         <DrawerPaper.Item
           label="Ayuda"
-          active={active === 'second'}
-          // onPress={() => navigation.navigate('Doctores')}
+          active={active === 'ayuda'}
+          onPress={() => {
+            setActive('ayuda');
+            navigation.navigate('Ayuda');
+          }}
           icon={({size, color}) => <Icon name="help" size={20} color={color} />}
         />
 
         <DrawerPaper.Item
           label="Configuracion"
-          active={active === 'second'}
+          active={active === 'configuracion'}
+          onPress={() => {
+            setActive('configuracion');
+            navigation.navigate('Configuracion');
+          }}
           icon={({size, color}) => (
             <Icon name="settings" size={20} color={color} />
           )}
-          // onPress={() => navigation.navigate('Doctores')}
+     
         />
       </DrawerPaper.Section>
       <DrawerPaper.Section>

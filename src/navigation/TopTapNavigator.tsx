@@ -10,7 +10,7 @@ import Icon  from 'react-native-vector-icons/MaterialIcons';
 import {  useTheme, Title } from 'react-native-paper';
 import TopTapAbogado from './TopTapAbogados';
 import DrawerNavigator from './DrawerNavigator';
-import BarraBusqueda from '../components/abogados/BarraBusqueda';
+import BarraBusqueda from '../components/cliente/abogados/BarraBusqueda';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 import TarjetaCredito from '../components/comprar/formMetodos/FormMetodos';
 import { StackComprar } from './StackComprar';

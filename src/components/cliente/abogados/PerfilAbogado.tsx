@@ -13,8 +13,11 @@ export const PerfilAbogado = ({navigation}: Props) => {
   console.log(navigation)
   const {colors} = useTheme();
   return (
-    <ScrollView contentContainerStyle={styles.scroll}>
-     
+    <ScrollView
+      contentContainerStyle={{
+        ...styles.scroll,
+        backgroundColor: colors.background,
+      }}>
       <Button
         style={styles.goBack}
         icon={({size, color}) => (
@@ -35,12 +38,17 @@ export const PerfilAbogado = ({navigation}: Props) => {
         <Caption>Abogado</Caption>
         <Title> Juan Jose Murillo Bernal</Title>
         <View style={styles.contentIconos}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Chat')}>
             <Icon
               name="comments"
               color={colors.primary}
               size={30}
-              style={{borderWidth: 1, borderRadius: 10, padding: 5}}
+              style={{
+                borderWidth: 1,
+                borderRadius: 10,
+                padding: 5,
+                borderColor: colors.accent,
+              }}
             />
           </TouchableOpacity>
           <TouchableOpacity>
@@ -48,14 +56,32 @@ export const PerfilAbogado = ({navigation}: Props) => {
               name="video"
               color={colors.primary}
               size={30}
-              style={{borderWidth: 1, borderRadius: 10, padding: 5}}
+              style={{
+                borderWidth: 1,
+                borderRadius: 10,
+                padding: 5,
+                borderColor: colors.accent,
+              }}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Citas')}>
+            <Icon
+              name="calendar"
+              color={colors.primary}
+              size={30}
+              style={{
+                borderWidth: 1,
+                borderRadius: 10,
+                padding: 5,
+                borderColor: colors.accent,
+              }}
             />
           </TouchableOpacity>
         </View>
       </View>
 
       <View style={{width: '100%'}}>
-        <ListDatos/>
+        <ListDatos />
       </View>
     </ScrollView>
   );

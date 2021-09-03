@@ -1,8 +1,9 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Avatar, Badge, Paragraph, useTheme } from 'react-native-paper';
-import { Usuario } from '../../interfaces/abogadosInterface';
+import { Usuario } from '../../../interfaces/abogadosInterface';
 import { useNavigation, CommonActions } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 interface Props {
   user : Usuario
@@ -14,9 +15,11 @@ export const Abogado = ({user}:Props) => {
   const navigation = useNavigation()
   const { colors } = useTheme()
   return (
-    <TouchableOpacity style={{...styles.content}} onPress={()=> {navigation.dispatch(
-      CommonActions.navigate('PerfilAbogado')
-    )}}>
+    <TouchableOpacity
+      style={{...styles.content}}
+      onPress={() => {
+        navigation.dispatch(CommonActions.navigate('PerfilAbogado'));
+      }}>
       <Avatar.Image
         size={40}
         source={{
@@ -26,10 +29,14 @@ export const Abogado = ({user}:Props) => {
       <View style={styles.contentInfo}>
         <Text> {user.nombre}</Text>
         <Text> Derecho Civil </Text>
+        <View style={{flexDirection:'row'}}>
+          <Icon name="star" />
+          <Icon name="star" />
+          <Icon name="star" />
+        </View>
       </View>
       <View>
-      <Badge style={{backgroundColor: colors.accent}}>VIP</Badge>
-
+        <Badge style={{backgroundColor: colors.accent}}>VIP</Badge>
       </View>
     </TouchableOpacity>
   );
