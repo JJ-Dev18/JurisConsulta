@@ -1,4 +1,5 @@
 package com.jurisconsultaapp;
+import com.masteratul.exceptionhandler.ReactNativeExceptionHandlerPackage;
 // react-native-splash-screen >= 0.3.1
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import android.app.Application;

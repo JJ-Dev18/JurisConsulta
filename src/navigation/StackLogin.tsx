@@ -22,6 +22,7 @@ const Stack = createStackNavigator();
 export const StackLogin = () => {
   const scheme = useColorScheme();
   const dispatch = useDispatch()
+  
 
   useEffect(() => {
      AppState.addEventListener('change', (status)=>{

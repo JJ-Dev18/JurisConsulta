@@ -89,17 +89,17 @@ export const MenuInternoAbogado = ({navigation, setDark,setLigth}: any) => {
             <Icon name="calendar-day" size={20} color={color} />
           )}
         />
-        <DrawerPaper.Item
+        {/* <DrawerPaper.Item
           label="Clientes"
           active={active === 'clientes'}
           onPress={() => {
-            setActive('citas');
+            setActive('clientes');
             navigation.navigate('clientes');
           }}
           icon={({size, color}) => (
             <Icon name="user-friends" size={20} color={color} />
           )}
-        />
+        /> */}
         <DrawerPaper.Item
           label="Historial"
           active={active === 'historial'}

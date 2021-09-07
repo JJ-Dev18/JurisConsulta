@@ -7,7 +7,7 @@ import { createStackNavigator, StackScreenProps } from '@react-navigation/stack'
 import { PerfilAbogado } from '../../components/cliente/abogados/PerfilAbogado';
 import { ListAbogados } from '../../components/cliente/abogados/ListAbogados';
 import { Chat } from '../../components/cliente/abogados/Chat';
-import { Citas } from '../../components/cliente/abogados/Citas';
+import { CitasAbogado } from '../../components/cliente/abogados/CitasAbogado';
 import { DetalleCita } from '../../components/cliente/abogados/DetalleCita';
 
   const Stack = createStackNavigator();
@@ -34,7 +34,7 @@ export const StackAbogado = () => {
         component={PerfilAbogado}
       />
       <Stack.Screen name="Chat" options={{title: 'Chat'}} component={Chat} />
-      <Stack.Screen name="CitasAbogado" component={Citas} />
+      <Stack.Screen name="CitasAbogado" component={CitasAbogado} />
       <Stack.Screen name="Detalle cita" component={DetalleCita} />
     </Stack.Navigator>
   );

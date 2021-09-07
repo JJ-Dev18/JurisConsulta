@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import { createDrawerNavigator, DrawerContent, DrawerContentComponentProps, DrawerContentScrollView, DrawerScreenProps } from '@react-navigation/drawer';
+import { createDrawerNavigator,DrawerScreenProps } from '@react-navigation/drawer';
 
-import { useWindowDimensions, View, Image, TouchableOpacity, Text, Button, StyleSheet,ScrollView } from 'react-native';
+import { useWindowDimensions, StyleSheet,ScrollView, Alert } from 'react-native';
 import { Avatar, Drawer as DrawerPaper, Paragraph, useTheme } from 'react-native-paper';
 
 import TopTapNavigator from './cliente/TopTapNavigatorCliente';
@@ -20,7 +20,10 @@ import { useState } from 'react';
 import { MenuInternoAbogado } from './abogado/MenuInternoAbogado';
 import TopTapNavigatorAbogado from './abogado/TopTapNavigatorAbogado';
 import { MiPerfilAbogado } from '../components/Abogado/MiPerfilAbogado';
-
+import {
+  setJSExceptionHandler,
+  setNativeExceptionHandler,
+} from 'react-native-exception-handler';
 
 
 const Drawer = createDrawerNavigator();
@@ -42,6 +45,28 @@ function DrawerNavigator({navigation}:Props) {
        headerShown: false,
      });
     })
+    const handleError = (error:Error, isFatal:any) => {
+      // fetch
+      console.log(error, isFatal);
+      Alert.alert('Un error inexperado a ocurrido', `Error: ${error.name}  ${error.message}`, [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+      ]);
+    };
+
+    setJSExceptionHandler((error, isFatal) => {
+      console.log('caught global error');
+      handleError(error, isFatal);
+    }, true);
+
+    setNativeExceptionHandler(errorString => {
+      // do the things
+      
+    });
 
   return (
     <Drawer.Navigator

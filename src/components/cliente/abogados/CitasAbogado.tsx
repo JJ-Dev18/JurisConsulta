@@ -8,7 +8,7 @@ import { ChipHora } from '../../app/ChipHora';
 
 interface Props extends StackScreenProps<any, any> {}
 
-export const Citas = ({navigation,route}: Props) => {
+export const CitasAbogado = ({navigation,route}: Props) => {
   const {colors} = useTheme();
   console.log(route)
   return (
