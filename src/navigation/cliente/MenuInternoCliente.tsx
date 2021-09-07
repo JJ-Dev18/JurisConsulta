@@ -1,14 +1,18 @@
 import React from 'react'
 import { DrawerContentScrollView } from '@react-navigation/drawer';
-import { Avatar, Paragraph, useTheme , Drawer as DrawerPaper} from 'react-native-paper';
+import { Avatar, Paragraph, useTheme , Drawer as DrawerPaper, Switch} from 'react-native-paper';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-export const MenuInternoCliente = ({navigation,setTheme}:any ) => {
+export const MenuInternoCliente = ({navigation,setDark,setLigth}:any ) => {
 
   const {colors} = useTheme();
   const [active, setActive] = React.useState('Home');
-  
+   const [isTheme, setIsTheme] = React.useState(false);
+   const onToggleSwitchTheme = () => {
+     setIsTheme(!isTheme)
+     isTheme ? setDark() : setLigth()
+    };
   return (
     <DrawerContentScrollView
       style={{backgroundColor: colors.background, height: '100%'}}>
@@ -86,7 +90,9 @@ export const MenuInternoCliente = ({navigation,setTheme}:any ) => {
             setActive('ayuda');
             navigation.navigate('Ayuda');
           }}
-          icon={({size, color}) => <Icon name="question-circle" size={20} color={color} />}
+          icon={({size, color}) => (
+            <Icon name="question-circle" size={20} color={color} />
+          )}
         />
 
         <DrawerPaper.Item
@@ -96,18 +102,20 @@ export const MenuInternoCliente = ({navigation,setTheme}:any ) => {
             setActive('configuracion');
             navigation.navigate('Configuracion');
           }}
-          icon={({size, color}) => (
-            <Icon name="cogs" size={20} color={color} />
-          )}
-     
+          icon={({size, color}) => <Icon name="cogs" size={20} color={color} />}
         />
       </DrawerPaper.Section>
       <DrawerPaper.Section>
-        <DrawerPaper.Item
-          label="DarkMode"
-          active={active === 'second'}
-          onPress={setTheme}
-        />
+        <View style={{flexDirection:'row',alignItems:'center',padding:17}}>
+          <Icon name={isTheme? "moon" : 'sun'} color={isTheme? "black" : 'white'} size={25}/>
+          <Switch
+            value={isTheme}
+            onValueChange={onToggleSwitchTheme}
+            color={colors.primary}
+            style={{width: 40,marginLeft:10}}
+            trackColor={{true:'black',false:"white"}}
+          />
+        </View>
         <DrawerPaper.Item
           label="Cerrar Sesion"
           active={active === 'second'}

@@ -54,19 +54,20 @@ const CombineDarkTheme = {
 export const StackLogin = () => {
   // const scheme = useColorScheme();
   
-  const {darkTheme} = useSelector((state: RootState) => state.Ui);
+  const theme = useSelector((state: RootState) => state.Ui);
   // console.log(darkTheme)
   const { colors } = useTheme()
+  console.log(theme.dark)
   return (
-    <PaperProvider theme={darkTheme ? CombineDarkTheme : CombineDefaultTheme}>
-      <NavigationContainer>
+    <PaperProvider theme={theme}>
+      <NavigationContainer theme={theme}>
         <Stack.Navigator
           // initialRouteName="Home"
           screenOptions={{
             headerShown: true,
-            headerTintColor: darkTheme ? 'white' : 'black',
+            headerTintColor: theme.dark ? 'white' : 'black',
             headerStyle: {
-              backgroundColor: darkTheme ? 'black' : 'white',
+              backgroundColor: theme.dark ? 'black' : 'white',
             },
           }}>
           <Stack.Screen name="Iniciar Sesion" component={LoginScreen} />

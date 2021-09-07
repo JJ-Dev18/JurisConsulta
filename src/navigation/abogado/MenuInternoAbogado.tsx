@@ -11,10 +11,15 @@ import {
 import {View,  StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-export const MenuInternoAbogado = ({navigation, setTheme}: any) => {
+export const MenuInternoAbogado = ({navigation, setDark,setLigth}: any) => {
   const {colors} = useTheme();
   const [active, setActive] = React.useState('Home');
   const [isSwitchOn, setIsSwitchOn] = React.useState(false);
+  const [isTheme, setIsTheme] = React.useState(false);
+    const onToggleSwitchTheme = () => {
+      setIsTheme(!isTheme);
+      isTheme ? setDark() : setLigth();
+    };
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   return (
     <DrawerContentScrollView
@@ -40,14 +45,14 @@ export const MenuInternoAbogado = ({navigation, setTheme}: any) => {
           justifyContent: 'space-between',
           flexDirection: 'row',
           paddingHorizontal: 20,
-          paddingTop:10
+          paddingTop: 10,
         }}>
-        <Text>Estado: {isSwitchOn ? 'Disponible' : 'No Disponible' }</Text>
+        <Text>Estado: {isSwitchOn ? 'Disponible' : 'No Disponible'}</Text>
         <Switch
           value={isSwitchOn}
           onValueChange={onToggleSwitch}
           color="#22bb33"
-          style={{width:100}}
+          style={{width: 100}}
         />
       </View>
 
@@ -137,11 +142,20 @@ export const MenuInternoAbogado = ({navigation, setTheme}: any) => {
         />
       </DrawerPaper.Section>
       <DrawerPaper.Section>
-        <DrawerPaper.Item
-          label="DarkMode"
-          active={active === 'second'}
-          onPress={setTheme}
-        />
+        <View style={{flexDirection: 'row', alignItems: 'center', padding: 17}}>
+          <Icon
+            name={isTheme ? 'moon' : 'sun'}
+            color={isTheme ? 'black' : 'white'}
+            size={25}
+          />
+          <Switch
+            value={isTheme}
+            onValueChange={onToggleSwitchTheme}
+            color={colors.primary}
+            style={{width: 40, marginLeft: 10}}
+            trackColor={{true: 'black', false: 'white'}}
+          />
+        </View>
         <DrawerPaper.Item
           label="Cerrar Sesion"
           active={active === 'second'}

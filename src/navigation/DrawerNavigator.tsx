@@ -12,7 +12,7 @@ import Historial from '../components/cliente/Historial';
 import Cupones from '../components/cliente/Cupones';
 import { useSelector ,useDispatch} from 'react-redux';
 import { RootState } from '../store/store';
-import { setThemeApp } from '../actions/ui';
+import { setDarkTheme, setLightTheme, setThemeApp } from '../actions/ui';
 import { Configuracion } from '../components/cliente/Configuracion';
 import { Ayuda } from '../components/cliente/Ayuda';
 import { MenuInternoCliente } from './cliente/MenuInternoCliente';
@@ -26,11 +26,14 @@ const Drawer = createDrawerNavigator();
 interface Props extends DrawerScreenProps<any,any> {}
 function DrawerNavigator({navigation}:Props) {
   const {width} = useWindowDimensions();
-  const { darkTheme } = useSelector((state: RootState) => state.Ui)
-  const [state, setstate] = useState(false)
+  // const { darkTheme } = useSelector((state: RootState) => state.Ui)
+  const [state, setState] = useState(false)
   const dispatch = useDispatch()
-  const setTheme = () => {
-     dispatch(setThemeApp())
+  const setDark = () => {
+     dispatch(setDarkTheme())
+  }
+  const setLigth = () => {
+    dispatch(setLightTheme())
   }
   const { colors } = useTheme()
    useEffect(() => {
@@ -41,7 +44,21 @@ function DrawerNavigator({navigation}:Props) {
 
   return (
     <Drawer.Navigator
-      drawerContent={props => state ?  <MenuInternoCliente {...props} setTheme={setTheme} /> : <MenuInternoAbogado {...props} setTheme={setTheme}/>}
+      drawerContent={props =>
+        state ? (
+          <MenuInternoCliente
+            {...props}
+            setDark={setDark}
+            setLigth={setLigth}
+          />
+        ) : (
+          <MenuInternoAbogado
+            {...props}
+            setDark={setDark}
+            setLigth={setLigth}
+          />
+        )
+      }
       screenOptions={{
         headerRight: () => (
           <Icon
@@ -49,7 +66,7 @@ function DrawerNavigator({navigation}:Props) {
             color={colors.primary}
             style={{marginRight: 20}}
             size={20}
-            onPress={setTheme}
+            onPress={() => setState(!state)}
           />
         ),
         // drawerContentContainerStyle:{backgroundColor:'red'},
@@ -62,7 +79,10 @@ function DrawerNavigator({navigation}:Props) {
         drawerType: width >= 768 ? 'permanent' : 'front', // Menú modo horizontal
         headerShown: true, // Oculta la hamburguesa
       }}>
-      <Drawer.Screen name="Home" component={state ? TopTapNavigator : TopTapNavigatorAbogado} />
+      <Drawer.Screen
+        name="Home"
+        component={state ? TopTapNavigator : TopTapNavigatorAbogado}
+      />
       <Drawer.Screen
         name="Perfil"
         options={{title: 'Mi perfil'}}
