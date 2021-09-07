@@ -44,16 +44,16 @@ export const LoadingScreen = () => {
       }}>
       {/* <ImageBackground source={image} resizeMode="cover" style={styles.image}> */}
       <Animated.Image
-        style={{width: 70, height: 70, transform: [{rotateY:spin}]}}
+        style={{width: 70, height: 70, transform: [{rotateY: spin}]}}
         source={{
-          uri: 'https://res.cloudinary.com/dbi95d6gs/image/upload/v1630265600/Logo/J-removebg-preview_1_bjax4y.png',
+          uri: 'https://res.cloudinary.com/dbi95d6gs/image/upload/v1630290630/Logo/Logo_JC_letras_blancas_rkhw5p.png',
         }}
       />
       <Text
         style={{
           fontSize: 45,
           textAlign: 'center',
-          color: 'black',
+          color: colors.text,
         }}>
         {' '}
         Jurisconsulta{' '}

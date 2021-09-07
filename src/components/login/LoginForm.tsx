@@ -13,17 +13,19 @@ export const LoginForm = () => {
   // console.log(navigator)
   // const { colors }= useTheme()
   return (
-    <View style={{...styles.container,backgroundColor:colors.background,flex:1}}>
+    <View
+      style={{
+        ...styles.container,
+        backgroundColor: colors.background,
+        flex: 1,
+      }}>
       <Image
         style={{width: 100, height: 100}}
         source={{
-          uri: 'https://res.cloudinary.com/dbi95d6gs/image/upload/v1630265600/Logo/J-removebg-preview_1_bjax4y.png',
+          uri: 'https://res.cloudinary.com/dbi95d6gs/image/upload/v1630290630/Logo/Logo_JC_letras_blancas_rkhw5p.png',
         }}
       />
-      <Text style={{...styles.title, color: colors.text}}>
-        {' '}
-        Iniciar Sesion
-      </Text>
+      <Text style={{...styles.title, color: colors.text}}> Iniciar Sesion</Text>
       <TextInput
         mode="outlined"
         label="Usuario"
@@ -36,7 +38,13 @@ export const LoginForm = () => {
         mode="outlined"
         label="Contrasena"
         secureTextEntry={secure}
-        right={<TextInput.Icon name="eye" color={colors.primary} onPress={() => setSecure(!secure)} />}
+        right={
+          <TextInput.Icon
+            name="eye"
+            color={colors.primary}
+            onPress={() => setSecure(!secure)}
+          />
+        }
       />
 
       <View style={styles.containerButtons}>

@@ -3,6 +3,7 @@ import { DrawerContentScrollView } from '@react-navigation/drawer';
 import { Avatar, Paragraph, useTheme , Drawer as DrawerPaper, Switch} from 'react-native-paper';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { SwitchTheme } from '../../components/SwitchTheme';
 
 export const MenuInternoCliente = ({navigation,setDark,setLigth}:any ) => {
 
@@ -106,20 +107,7 @@ export const MenuInternoCliente = ({navigation,setDark,setLigth}:any ) => {
         />
       </DrawerPaper.Section>
       <DrawerPaper.Section>
-        <View style={{flexDirection: 'row', alignItems: 'center', padding: 17}}>
-          <Icon
-            name={isTheme ? 'sun' : 'moon'}
-            color={isTheme ? 'white' : 'black'}
-            size={25}
-          />
-          <Switch
-            value={isTheme}
-            onValueChange={onToggleSwitchTheme}
-            color={colors.primary}
-            style={{width: 40, marginLeft: 10}}
-            trackColor={{true: 'white', false: 'black'}}
-          />
-        </View>
+        <SwitchTheme setDark={setDark} setLigth={setLigth} />
         <DrawerPaper.Item
           label="Cerrar Sesion"
           active={active === 'second'}
