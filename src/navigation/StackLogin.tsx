@@ -1,4 +1,5 @@
 import React,{useEffect} from 'react';
+import SplashScreen from 'react-native-splash-screen';
 
 import {createStackNavigator} from '@react-navigation/stack';
 import {LoginScreen} from '../screens/LoginScreen';
@@ -30,6 +31,7 @@ export const StackLogin = () => {
            : dispatch(setLightTheme());
        }
      })
+     SplashScreen.hide();
   }, [])
   // useEffect(() => {
   //   if(scheme=='dark'){

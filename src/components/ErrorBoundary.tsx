@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { View } from 'react-native';
 import { Text } from 'react-native-paper';
 
 type MyState = {hasError: boolean};
@@ -23,7 +24,12 @@ export default class ErrorBoundary extends React.Component<any, MyState> {
   render() {
     if (this.state.hasError) {
       // Puedes renderizar cualquier interfaz de repuesto
-      return <Text>Something went wrong.</Text>;
+      return (
+        <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
+          
+          <Text>Something went wrong.</Text>
+        </View>
+      );
     }
 
     return this.props.children;
