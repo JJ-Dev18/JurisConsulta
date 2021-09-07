@@ -6,7 +6,7 @@ import { Avatar, Drawer as DrawerPaper, Paragraph, useTheme } from 'react-native
 
 import TopTapNavigator from './cliente/TopTapNavigatorCliente';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { PerfilCliente } from '../components/cliente/PerfilCliente';
+import { MiPerfilCliente } from '../components/cliente/MiPerfilCliente';
 import { Citas } from '../components/cliente/Citas';
 import Historial from '../components/cliente/Historial';
 import Cupones from '../components/cliente/Cupones';
@@ -19,6 +19,7 @@ import { MenuInternoCliente } from './cliente/MenuInternoCliente';
 import { useState } from 'react';
 import { MenuInternoAbogado } from './abogado/MenuInternoAbogado';
 import TopTapNavigatorAbogado from './abogado/TopTapNavigatorAbogado';
+import { MiPerfilAbogado } from '../components/Abogado/MiPerfilAbogado';
 
 
 
@@ -86,9 +87,9 @@ function DrawerNavigator({navigation}:Props) {
       <Drawer.Screen
         name="Perfil"
         options={{title: 'Mi perfil'}}
-        component={PerfilCliente}
+        component={state ? MiPerfilCliente : MiPerfilAbogado}
       />
-      <Drawer.Screen name="Citas" component={Citas} />
+      <Drawer.Screen name="MisCitas" component={Citas} />
       <Drawer.Screen name="Historial" component={Historial} />
       <Drawer.Screen name="Cupones" component={Cupones} />
       <Drawer.Screen name="Ayuda" component={Ayuda} />

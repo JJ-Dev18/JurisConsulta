@@ -3,9 +3,9 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import { HomeScreen } from '../../screens/clientes/HomeScreen';
 import Icon  from 'react-native-vector-icons/FontAwesome5';
 import {  useTheme, Title } from 'react-native-paper';
-import TopTapAbogado from '../TopTapAbogados';
+import TopTapAbogado from './TopTapAbogados';
 import { DrawerScreenProps } from '@react-navigation/drawer';
-import { StackComprar } from '../StackComprar';
+import { StackComprar } from './StackComprar';
 
 
 

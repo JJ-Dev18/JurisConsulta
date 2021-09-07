@@ -11,7 +11,7 @@ export const MenuInternoCliente = ({navigation,setDark,setLigth}:any ) => {
    const [isTheme, setIsTheme] = React.useState(false);
    const onToggleSwitchTheme = () => {
      setIsTheme(!isTheme)
-     isTheme ? setDark() : setLigth()
+     isTheme ? setLigth() : setDark()
     };
   return (
     <DrawerContentScrollView
@@ -57,7 +57,7 @@ export const MenuInternoCliente = ({navigation,setDark,setLigth}:any ) => {
           active={active === 'citas'}
           onPress={() => {
             setActive('citas');
-            navigation.navigate('Citas');
+            navigation.navigate('MisCitas');
           }}
           icon={({size, color}) => (
             <Icon name="calendar-day" size={20} color={color} />
@@ -106,14 +106,18 @@ export const MenuInternoCliente = ({navigation,setDark,setLigth}:any ) => {
         />
       </DrawerPaper.Section>
       <DrawerPaper.Section>
-        <View style={{flexDirection:'row',alignItems:'center',padding:17}}>
-          <Icon name={isTheme? "moon" : 'sun'} color={isTheme? "black" : 'white'} size={25}/>
+        <View style={{flexDirection: 'row', alignItems: 'center', padding: 17}}>
+          <Icon
+            name={isTheme ? 'sun' : 'moon'}
+            color={isTheme ? 'white' : 'black'}
+            size={25}
+          />
           <Switch
             value={isTheme}
             onValueChange={onToggleSwitchTheme}
             color={colors.primary}
-            style={{width: 40,marginLeft:10}}
-            trackColor={{true:'black',false:"white"}}
+            style={{width: 40, marginLeft: 10}}
+            trackColor={{true: 'white', false: 'black'}}
           />
         </View>
         <DrawerPaper.Item

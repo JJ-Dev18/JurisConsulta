@@ -58,7 +58,7 @@ const ListDatos = () => {
       <List.Section
         title="Biografia"
         titleStyle={{backgroundColor: colors.primary, color: 'white'}}>
-        <List.Item title="Soy el mejor" />
+        <List.Item title="Soy" />
       </List.Section>
       <List.Section
         title="Calificaciones"

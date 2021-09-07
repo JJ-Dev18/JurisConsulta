@@ -3,11 +3,12 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {HomeScreen} from '../../screens/clientes/HomeScreen';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useTheme, Title} from 'react-native-paper';
-import TopTapAbogado from '../TopTapAbogados';
+import TopTapAbogado from '../cliente/TopTapAbogados';
 import {DrawerScreenProps} from '@react-navigation/drawer';
-import {StackComprar} from '../StackComprar';
+import {StackComprar} from '../cliente/StackComprar';
 import { HomeScreenAbogado } from '../../screens/abogados/HomeScreenAbogado';
 import { Consultorios } from '../../components/Abogado/Consultorios';
+import TopTapClientes from './TopTapClientes';
 
 const Tab = createMaterialTopTabNavigator();
 interface Props extends DrawerScreenProps<any, any> {}
@@ -68,7 +69,7 @@ function TopTapNavigatorAbogado({navigation}: Props) {
       })}>
       <Tab.Screen name="Inicio" component={HomeScreenAbogado} />
       {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}
-      <Tab.Screen name="Clientes" component={TopTapAbogado} />
+      <Tab.Screen name="Clientes" component={TopTapClientes} />
       <Tab.Screen name="Consultorios" component={Consultorios} />
       {/* <Tab.Screen name="Drawer" component={DrawerPrincipal} /> */}
     </Tab.Navigator>

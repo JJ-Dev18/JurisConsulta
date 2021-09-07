@@ -5,6 +5,7 @@ import React from 'react';
 import { StackLogin } from './src/navigation/StackLogin';
 import { Provider, useSelector } from 'react-redux';
 import { RootState, store } from './src/store/store';
+import ErrorBoundary from './src/components/ErrorBoundary';
 // declare global {
 //   namespace ReactNativePaper {
 //     interface ThemeColors {
@@ -22,7 +23,9 @@ export default function App() {
  
   return (
     <Provider store={store}>
+        <ErrorBoundary>
         <StackLogin />
+        </ErrorBoundary>
     </Provider>
   );
 }

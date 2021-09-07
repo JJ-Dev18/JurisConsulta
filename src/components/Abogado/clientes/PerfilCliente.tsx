@@ -1,16 +1,16 @@
-import React from 'react'
-import { View, StyleSheet, Text, TouchableOpacity,  } from 'react-native';
-import { ScrollView,  } from 'react-native-gesture-handler';
+import React from 'react';
+import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 import {Avatar, Caption, Title, useTheme, Button} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { SurfaceInfo } from './SurfaceInfo';
-import { StackScreenProps } from '@react-navigation/stack';
-import ListDatos from './ListDatos';
+// import {SurfaceInfo} from './SurfaceInfo';
+import {StackScreenProps} from '@react-navigation/stack';
+import ListDatos from '../../cliente/abogados/ListDatos';
 
 interface Props extends StackScreenProps<any, any> {}
 
-export const PerfilAbogado = ({navigation}: Props) => {
-  console.log(navigation)
+export const PerfilCliente = ({navigation}: Props) => {
+  console.log(navigation);
   const {colors} = useTheme();
   return (
     <ScrollView
@@ -35,7 +35,7 @@ export const PerfilAbogado = ({navigation}: Props) => {
             uri: 'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?itok=fl2H3Opv',
           }}
         />
-        <Caption>Abogado</Caption>
+        <Caption>Cliente</Caption>
         <Title> Juan Jose Murillo Bernal</Title>
         <View style={styles.contentIconos}>
           <TouchableOpacity onPress={() => navigation.navigate('Chat')}>
@@ -64,7 +64,7 @@ export const PerfilAbogado = ({navigation}: Props) => {
               }}
             />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('CitasAbogado')}>
+          {/* <TouchableOpacity onPress={() => navigation.navigate('CitasAbogado')}>
             <Icon
               name="calendar"
               color={colors.primary}
@@ -76,7 +76,7 @@ export const PerfilAbogado = ({navigation}: Props) => {
                 borderColor: colors.accent,
               }}
             />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
 
@@ -88,36 +88,30 @@ export const PerfilAbogado = ({navigation}: Props) => {
 };
 
 const styles = StyleSheet.create({
-    
   scroll: {
-    
-    flexDirection: "column",
-    alignItems:'center',
-    justifyContent : 'center'
-  },
-  contentAvatar : {
-    flex: 1 ,
-    marginTop:10,
+    flexDirection: 'column',
+    alignItems: 'center',
     justifyContent: 'center',
-    alignItems : 'center'
   },
-  contentIconos : {
+  contentAvatar: {
+    flex: 1,
+    marginTop: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  contentIconos: {
     flexDirection: 'row',
     width: 200,
-    justifyContent: 'space-around'
-
+    justifyContent: 'space-around',
   },
-  goBack:{
+  goBack: {
     position: 'absolute',
-    top:10,
-    left:-20,
-    marginLeft:30,
-    width:100,
- 
-    
+    top: 10,
+    left: -20,
+    marginLeft: 30,
+    width: 100,
+
     // borderRadius:100,
-    color:'white'
-  }
-
-
+    color: 'white',
+  },
 });

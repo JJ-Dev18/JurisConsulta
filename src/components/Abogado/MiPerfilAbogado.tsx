@@ -1,25 +1,27 @@
-import React,{useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {Avatar, Caption, Title, useTheme, Button} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import ListDatos from './abogados/ListDatos';
-import { DrawerScreenProps } from '@react-navigation/drawer';
+import ListDatos from '../cliente/abogados/ListDatos';
+import {DrawerScreenProps} from '@react-navigation/drawer';
 
 interface Props extends DrawerScreenProps<any, any> {}
 
-export const PerfilCliente = ({navigation}: Props) => {
-  
-   useEffect(() => {
+export const MiPerfilAbogado = ({navigation}: Props) => {
+  useEffect(() => {
     navigation.setOptions({
-      headerShown:true
-    })  
-
-   }, [])
+      headerShown: true,
+    });
+  }, []);
   const {colors} = useTheme();
   return (
-    <ScrollView contentContainerStyle={{...styles.scroll,backgroundColor:colors.background}}>
-{/*     
+    <ScrollView
+      contentContainerStyle={{
+        ...styles.scroll,
+        backgroundColor: colors.background,
+      }}>
+      {/*     
       <Button
         style={styles.goBack}
         icon={({size, color}) => (
@@ -37,9 +39,8 @@ export const PerfilCliente = ({navigation}: Props) => {
             uri: 'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?itok=fl2H3Opv',
           }}
         />
-        <Caption>Cliente</Caption>
-        <Title> Juan Jose Murillo Bernal</Title>
-        
+        <Caption>Abogado</Caption>
+        <Title> Laura Sofia Bernal</Title>
       </View>
 
       <View style={{width: '100%'}}>
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   contentIconos: {
-    marginTop:20,
+    marginTop: 20,
     flexDirection: 'row',
     width: 200,
     justifyContent: 'space-around',
