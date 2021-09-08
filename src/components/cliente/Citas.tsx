@@ -41,7 +41,7 @@ export const Citas = () => {
         <Icon name="calendar" color={colors.primary} size={18} />
         <Text>Agenda tu cita </Text>
       </TouchableOpacity>
-      <SelectFecha/>
+      {/* <SelectFecha/> */}
 
       <Surface style={styles.citas}>
         <Icon name="calendar" color={colors.primary} size={40} />

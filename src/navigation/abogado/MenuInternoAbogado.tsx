@@ -10,7 +10,7 @@ import {
 } from 'react-native-paper';
 import {View,  StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { SwitchTheme } from '../../components/SwitchTheme';
+import { SwitchTheme } from '../../components/app/SwitchTheme';
 
 export const MenuInternoAbogado = ({navigation, setDark,setLigth}: any) => {
   const {colors} = useTheme();

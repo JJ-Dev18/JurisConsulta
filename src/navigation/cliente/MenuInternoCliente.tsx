@@ -3,7 +3,7 @@ import { DrawerContentScrollView } from '@react-navigation/drawer';
 import { Avatar, Paragraph, useTheme , Drawer as DrawerPaper, Switch} from 'react-native-paper';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { SwitchTheme } from '../../components/SwitchTheme';
+import { SwitchTheme } from '../../components/app/SwitchTheme';
 
 export const MenuInternoCliente = ({navigation,setDark,setLigth}:any ) => {
 

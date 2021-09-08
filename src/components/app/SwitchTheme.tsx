@@ -3,7 +3,7 @@ import { View, useColorScheme } from 'react-native';
 import { Switch, useTheme } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useSelector } from 'react-redux';
-import { RootState } from '../store/store';
+import { RootState } from '../../store/store';
 
 
 
