@@ -21,6 +21,7 @@ function TopTapNavigator({navigation}: Props) {
     navigation.setOptions({
       headerShown: true,
       headerLeft: undefined,
+      headerTitle: '',
     });
   });
 

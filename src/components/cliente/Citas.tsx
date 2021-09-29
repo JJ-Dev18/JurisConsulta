@@ -7,27 +7,9 @@ import { SelectFecha } from '../app/SelectFecha';
 
 export const Citas = () => {
    
-   moment.locale('es')
-
-   const date = new Date()
-   const markedData = moment(date)
-   const [state, setstate] = useState({
-     date,
-     markedData : markedData,
-     StringDate: markedData.format('LL'),
-
-   });
+  
    const {colors } = useTheme()
-   const sumarFecha = () => {
-      let newDate = state.markedData.add(1, 'days');
-    //  console.log(newDate)
-     setstate({...state,StringDate:newDate.format('LL')})
-    
-   }
-   const restarFecha= ()=> {
-     let newDate = state.markedData.subtract(1,'days')
-     setstate({...state, StringDate: newDate.format('LL')});
-   }
+   
   return (
     <View
       style={{
@@ -41,7 +23,7 @@ export const Citas = () => {
         <Icon name="calendar" color={colors.primary} size={18} />
         <Text>Agenda tu cita </Text>
       </TouchableOpacity>
-      {/* <SelectFecha/> */}
+      <SelectFecha/>
 
       <Surface style={styles.citas}>
         <Icon name="calendar" color={colors.primary} size={40} />

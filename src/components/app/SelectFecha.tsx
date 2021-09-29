@@ -2,16 +2,17 @@ import React from 'react'
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { useTheme } from 'react-native-paper';
 import moment from 'moment';
+import 'moment/locale/es'; 
 import { useState } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export const SelectFecha = () => {
   
   const { colors } = useTheme()
-   moment.locale('es');
+  //  moment.locale('es');
 
    const date = new Date();
-   const markedData = moment(date);
+   const markedData = moment(date).locale('es');
    const [state, setstate] = useState({
      date,
      markedData: markedData,
